@@ -1,0 +1,192 @@
+HDFS k:  2 entropy_theshold:  2.0 jaccard_similarity_threshold:  0.7 digit_percent:  0
+Parsing file: data/loghub_2k_corrected/HDFS/HDFS_2k.log
+Parsing done. [Time taken: 0:00:01.218165]
+Parsing Error: parsed_eventId = 04137b95, does not completely match groundtruth_eventId = E4, affecting log entries = 2
+Parsing Error: parsed_eventId = 98012f03, does not completely match groundtruth_eventId = E4, affecting log entries = 2
+Parsing Error: parsed_eventId = 415a1760, does not completely match groundtruth_eventId = E4, affecting log entries = 1
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 0.9975
+Hadoop k:  8 entropy_theshold:  1.7 jaccard_similarity_threshold:  0.7 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/Hadoop/Hadoop_2k.log
+Parsing done. [Time taken: 0:00:03.314579]
+Parsing Error: parsed_eventId = cab4d7aa, does not completely match groundtruth_eventId = E17, affecting log entries = 13
+Parsing Error: parsed_eventId = 49c660e5, does not completely match groundtruth_eventId = E77, affecting log entries = 10
+Parsing Error: parsed_eventId = 1465511b, does not completely match groundtruth_eventId = E102, affecting log entries = 10
+Parsing Error: parsed_eventId = 3cc98995, does not completely match groundtruth_eventId = E77, affecting log entries = 3
+Parsing Error: parsed_eventId = 2fd3fb67, does not completely match groundtruth_eventId = E17, affecting log entries = 1
+Parsing Error: parsed_eventId = 5c8daeb8, does not completely match groundtruth_eventId = E102, affecting log entries = 1
+Parsing Error: parsed_eventId = 23287a46, does not completely match groundtruth_eventId = E8, affecting log entries = 1
+Parsing Error: parsed_eventId = 602cb0dc, does not completely match groundtruth_eventId = E8, affecting log entries = 1
+Precision: 0.9993, Recall: 0.9991, F1_measure: 0.9992, Parsing_Accuracy: 0.9800
+Spark k:  6 entropy_theshold:  2.1 jaccard_similarity_threshold:  0.6 digit_percent:  0
+Parsing file: data/loghub_2k_corrected/Spark/Spark_2k.log
+Parsing done. [Time taken: 0:00:01.583173]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+Zookeeper k:  8 entropy_theshold:  2.2 jaccard_similarity_threshold:  0.9 digit_percent:  0
+Parsing file: data/loghub_2k_corrected/Zookeeper/Zookeeper_2k.log
+Parsing done. [Time taken: 0:00:01.925821]
+Parsing Error: parsed_eventId = 8a301f48, does not completely match groundtruth_eventId = E44, affecting log entries = 7
+Parsing Error: parsed_eventId = 6cc665ca, does not completely match groundtruth_eventId = E44, affecting log entries = 2
+Parsing Error: parsed_eventId = d10fd6a5, does not completely match groundtruth_eventId = E44, affecting log entries = 1
+Parsing Error: parsed_eventId = 6dfd13db, does not completely match groundtruth_eventId = E44, affecting log entries = 1
+Precision: 0.9999, Recall: 0.9997, F1_measure: 0.9998, Parsing_Accuracy: 0.9945
+BGL k:  9 entropy_theshold:  5.5 jaccard_similarity_threshold:  0.6 digit_percent:  0
+Parsing file: data/loghub_2k_corrected/BGL/BGL_2k.log
+Parsing done. [Time taken: 0:00:03.268666]
+Parsing Error: parsed_eventId = 18498bfd, does not completely match groundtruth_eventId = E37, affecting log entries = 16
+Parsing Error: parsed_eventId = 4ae43db6, does not completely match groundtruth_eventId = E73, affecting log entries = 2
+Parsing Error: parsed_eventId = d0fbbb3d, does not completely match groundtruth_eventId = E37, affecting log entries = 2
+Parsing Error: parsed_eventId = bce611bf, does not completely match groundtruth_eventId = E73, affecting log entries = 1
+Parsing Error: parsed_eventId = 24e281fb, does not completely match groundtruth_eventId = E73, affecting log entries = 1
+Parsing Error: parsed_eventId = ea89eef1, does not completely match groundtruth_eventId = E73, affecting log entries = 1
+Precision: 0.9996, Recall: 0.9995, F1_measure: 0.9995, Parsing_Accuracy: 0.9885
+HPC k:  9 entropy_theshold:  1.2 jaccard_similarity_threshold:  0.6 digit_percent:  0.4
+Parsing file: data/loghub_2k_corrected/HPC/HPC_2k.log
+Parsing done. [Time taken: 0:00:01.805361]
+Parsing Error: parsed_eventId = aaf4ba41, does not completely match groundtruth_eventId = E20, affecting log entries = 2
+Parsing Error: parsed_eventId = c220de6e, does not completely match groundtruth_eventId = E43, affecting log entries = 2
+Parsing Error: parsed_eventId = e6f4686e, does not completely match groundtruth_eventId = E43, affecting log entries = 1
+Parsing Error: parsed_eventId = 1c9252dd, does not completely match groundtruth_eventId = E43, affecting log entries = 1
+Parsing Error: parsed_eventId = 68428543, does not completely match groundtruth_eventId = E20, affecting log entries = 1
+Parsing Error: parsed_eventId = 05b8a108, does not completely match groundtruth_eventId = E20, affecting log entries = 1
+Precision: 1.0000, Recall: 0.9999, F1_measure: 1.0000, Parsing_Accuracy: 0.9960
+Thunderbird k:  11 entropy_theshold:  4.1 jaccard_similarity_threshold:  0.4 digit_percent:  0.05
+Parsing file: data/loghub_2k_corrected/Thunderbird/Thunderbird_2k.log
+Parsing done. [Time taken: 0:00:04.415352]
+Parsing Error: parsed_eventId = 31c7079d, does not completely match groundtruth_eventId = E146, affecting log entries = 33
+Parsing Error: parsed_eventId = b1b5acf1, corresponds to multiple groundtruth_eventIds = ['E99', 'E100', 'E101', 'E102'], affecting log entries = 4
+Parsing Error: parsed_eventId = f3156356, does not completely match groundtruth_eventId = E85, affecting log entries = 4
+Parsing Error: parsed_eventId = 9550986e, does not completely match groundtruth_eventId = E106, affecting log entries = 2
+Parsing Error: parsed_eventId = a0183fd1, does not completely match groundtruth_eventId = E106, affecting log entries = 2
+Parsing Error: parsed_eventId = 21dea3dd, does not completely match groundtruth_eventId = E106, affecting log entries = 2
+Parsing Error: parsed_eventId = 260dcbc4, does not completely match groundtruth_eventId = E106, affecting log entries = 2
+Parsing Error: parsed_eventId = 077005f0, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = be873e05, does not completely match groundtruth_eventId = E9, affecting log entries = 1
+Parsing Error: parsed_eventId = 50b535c3, does not completely match groundtruth_eventId = E9, affecting log entries = 1
+Parsing Error: parsed_eventId = c27729e2, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = 69f0f986, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = 35a2dfee, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = 8857d862, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = f8c3256b, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = 3348c475, does not completely match groundtruth_eventId = E146, affecting log entries = 1
+Parsing Error: parsed_eventId = cafdce56, does not completely match groundtruth_eventId = E77, affecting log entries = 1
+Parsing Error: parsed_eventId = 73265bab, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = ce314661, does not completely match groundtruth_eventId = E106, affecting log entries = 1
+Parsing Error: parsed_eventId = 27c42f65, does not completely match groundtruth_eventId = E84, affecting log entries = 1
+Parsing Error: parsed_eventId = 17f15ddc, does not completely match groundtruth_eventId = E82, affecting log entries = 1
+Parsing Error: parsed_eventId = 605bf269, does not completely match groundtruth_eventId = E84, affecting log entries = 1
+Parsing Error: parsed_eventId = 9d513600, does not completely match groundtruth_eventId = E84, affecting log entries = 1
+Parsing Error: parsed_eventId = 0f0d1cde, does not completely match groundtruth_eventId = E84, affecting log entries = 1
+Parsing Error: parsed_eventId = f597decf, does not completely match groundtruth_eventId = E84, affecting log entries = 1
+Parsing Error: parsed_eventId = 18e241de, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = d8b6bf9c, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = b00482ac, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = 1eb5dac0, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = 25c404d4, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = 627b8b43, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = b7d38de7, does not completely match groundtruth_eventId = E85, affecting log entries = 1
+Parsing Error: parsed_eventId = 794ab103, does not completely match groundtruth_eventId = E82, affecting log entries = 1
+Parsing Error: parsed_eventId = 04795c89, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = d878e0f4, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = ea332603, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 8dfbb35d, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 7c6c843d, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 6259212f, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = f6df922d, does not completely match groundtruth_eventId = E77, affecting log entries = 1
+Precision: 0.9989, Recall: 0.9985, F1_measure: 0.9987, Parsing_Accuracy: 0.9590
+Windows k:  8 entropy_theshold:  1.1 jaccard_similarity_threshold:  0.6 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/Windows/Windows_2k.log
+Parsing done. [Time taken: 0:00:01.890958]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+Linux k:  25 entropy_theshold:  0.09 jaccard_similarity_threshold:  0.33 digit_percent:  0.3
+Parsing file: data/loghub_2k_corrected/Linux/Linux_2k.log
+Parsing done. [Time taken: 0:00:03.162390]
+Parsing Error: parsed_eventId = 2315719c, corresponds to multiple groundtruth_eventIds = ['E38', 'E106', 'E65', 'E58', 'E85', 'E93', 'E92', 'E49', 'E94'], affecting log entries = 14
+Parsing Error: parsed_eventId = 27bfff0e, corresponds to multiple groundtruth_eventIds = ['E20', 'E21'], affecting log entries = 5
+Parsing Error: parsed_eventId = 77adda88, corresponds to multiple groundtruth_eventIds = ['E77', 'E80'], affecting log entries = 2
+Parsing Error: parsed_eventId = f1205e3c, corresponds to multiple groundtruth_eventIds = ['E111', 'E110'], affecting log entries = 2
+Parsing Error: parsed_eventId = 6618f86c, corresponds to multiple groundtruth_eventIds = ['E44', 'E45'], affecting log entries = 2
+Precision: 0.9998, Recall: 1.0000, F1_measure: 0.9999, Parsing_Accuracy: 0.9875
+Android k:  9 entropy_theshold:  3.5 jaccard_similarity_threshold:  0.7 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/Android/Android_2k.log
+Parsing done. [Time taken: 0:00:04.403110]
+Parsing Error: parsed_eventId = 1ec6a0c1, does not completely match groundtruth_eventId = E41, affecting log entries = 21
+Parsing Error: parsed_eventId = 1e10e70d, does not completely match groundtruth_eventId = E10, affecting log entries = 10
+Parsing Error: parsed_eventId = c567e9f5, does not completely match groundtruth_eventId = E108, affecting log entries = 8
+Parsing Error: parsed_eventId = 7b1aead3, does not completely match groundtruth_eventId = E10, affecting log entries = 8
+Parsing Error: parsed_eventId = 71316629, does not completely match groundtruth_eventId = E108, affecting log entries = 7
+Parsing Error: parsed_eventId = 0b3df2ed, does not completely match groundtruth_eventId = E108, affecting log entries = 6
+Parsing Error: parsed_eventId = 735aa2c1, corresponds to multiple groundtruth_eventIds = ['E161', 'E160'], affecting log entries = 6
+Parsing Error: parsed_eventId = ff52c40c, corresponds to multiple groundtruth_eventIds = ['E32', 'E111', 'E70'], affecting log entries = 5
+Parsing Error: parsed_eventId = d397d482, does not completely match groundtruth_eventId = E10, affecting log entries = 5
+Parsing Error: parsed_eventId = f07fea14, does not completely match groundtruth_eventId = E41, affecting log entries = 3
+Parsing Error: parsed_eventId = f9984da8, does not completely match groundtruth_eventId = E108, affecting log entries = 1
+Parsing Error: parsed_eventId = 673aba76, does not completely match groundtruth_eventId = E108, affecting log entries = 1
+Parsing Error: parsed_eventId = 49f5d9d1, does not completely match groundtruth_eventId = E41, affecting log entries = 1
+Parsing Error: parsed_eventId = 5738a3c3, does not completely match groundtruth_eventId = E108, affecting log entries = 1
+Parsing Error: parsed_eventId = 468fb04e, does not completely match groundtruth_eventId = E108, affecting log entries = 1
+Parsing Error: parsed_eventId = 9384d7c1, does not completely match groundtruth_eventId = E108, affecting log entries = 1
+Parsing Error: parsed_eventId = 1707e5b0, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 0a42301f, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 8a236aad, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Precision: 0.9953, Recall: 0.9885, F1_measure: 0.9919, Parsing_Accuracy: 0.9560
+HealthApp k:  12 entropy_theshold:  1.8 jaccard_similarity_threshold:  0.7 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/HealthApp/HealthApp_2k.log
+Parsing done. [Time taken: 0:00:02.539797]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+Apache k:  12 entropy_theshold:  0 jaccard_similarity_threshold:  0.7 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/Apache/Apache_2k.log
+Parsing done. [Time taken: 0:00:00.954397]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+Proxifier k:  12 entropy_theshold:  0.1 jaccard_similarity_threshold:  0.7 digit_percent:  0.0
+Parsing file: data/loghub_2k_corrected/Proxifier/Proxifier_2k.log
+Parsing done. [Time taken: 0:00:01.085556]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+OpenSSH k:  4 entropy_theshold:  0.2 jaccard_similarity_threshold:  0.5 digit_percent:  0.3
+Parsing file: data/loghub_2k_corrected/OpenSSH/OpenSSH_2k.log
+Parsing done. [Time taken: 0:00:01.495942]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+OpenStack k:  20 entropy_theshold:  2.3 jaccard_similarity_threshold:  0.7 digit_percent:  0.26
+Parsing file: data/loghub_2k_corrected/OpenStack/OpenStack_2k.log
+Parsing done. [Time taken: 0:00:01.818913]
+Precision: 1.0000, Recall: 1.0000, F1_measure: 1.0000, Parsing_Accuracy: 1.0000
+Mac k:  12 entropy_theshold:  4.7 jaccard_similarity_threshold:  0.7 digit_percent:  0.25
+Parsing file: data/loghub_2k_corrected/Mac/Mac_2k.log
+Parsing done. [Time taken: 0:00:08.074009]
+Parsing Error: parsed_eventId = c651dd3e, corresponds to multiple groundtruth_eventIds = ['E142', 'E141'], affecting log entries = 32
+Parsing Error: parsed_eventId = a23397bf, does not completely match groundtruth_eventId = E311, affecting log entries = 5
+Parsing Error: parsed_eventId = 1ed73578, does not completely match groundtruth_eventId = E204, affecting log entries = 4
+Parsing Error: parsed_eventId = 2e7d93ed, does not completely match groundtruth_eventId = E206, affecting log entries = 3
+Parsing Error: parsed_eventId = f1b98cba, does not completely match groundtruth_eventId = E206, affecting log entries = 2
+Parsing Error: parsed_eventId = 0d28ae5b, does not completely match groundtruth_eventId = E169, affecting log entries = 2
+Parsing Error: parsed_eventId = 3d65c3ec, does not completely match groundtruth_eventId = E210, affecting log entries = 2
+Parsing Error: parsed_eventId = 91eeaa24, does not completely match groundtruth_eventId = E311, affecting log entries = 2
+Parsing Error: parsed_eventId = 29ad22d3, does not completely match groundtruth_eventId = E301, affecting log entries = 2
+Parsing Error: parsed_eventId = a2881e0e, does not completely match groundtruth_eventId = E177, affecting log entries = 2
+Parsing Error: parsed_eventId = 440900e0, does not completely match groundtruth_eventId = E280, affecting log entries = 2
+Parsing Error: parsed_eventId = efebfabb, does not completely match groundtruth_eventId = E301, affecting log entries = 2
+Parsing Error: parsed_eventId = df9781ff, does not completely match groundtruth_eventId = E210, affecting log entries = 2
+Parsing Error: parsed_eventId = 0581bc42, does not completely match groundtruth_eventId = E265, affecting log entries = 2
+Parsing Error: parsed_eventId = e047e0c9, does not completely match groundtruth_eventId = E99, affecting log entries = 2
+Parsing Error: parsed_eventId = e48d28b0, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = 9a7660fc, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = fd7f118c, does not completely match groundtruth_eventId = E280, affecting log entries = 1
+Parsing Error: parsed_eventId = 82fc4d7a, does not completely match groundtruth_eventId = E96, affecting log entries = 1
+Parsing Error: parsed_eventId = 1af5ad4c, does not completely match groundtruth_eventId = E166, affecting log entries = 1
+Parsing Error: parsed_eventId = 1bea6c7b, does not completely match groundtruth_eventId = E325, affecting log entries = 1
+Parsing Error: parsed_eventId = 101d0074, does not completely match groundtruth_eventId = E325, affecting log entries = 1
+Parsing Error: parsed_eventId = a1651d90, does not completely match groundtruth_eventId = E166, affecting log entries = 1
+Parsing Error: parsed_eventId = 70d4c163, does not completely match groundtruth_eventId = E204, affecting log entries = 1
+Parsing Error: parsed_eventId = ee07bb20, does not completely match groundtruth_eventId = E285, affecting log entries = 1
+Parsing Error: parsed_eventId = 9ad702e3, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = ab1636db, does not completely match groundtruth_eventId = E265, affecting log entries = 1
+Parsing Error: parsed_eventId = b62e8ff3, does not completely match groundtruth_eventId = E169, affecting log entries = 1
+Parsing Error: parsed_eventId = e3dd4417, does not completely match groundtruth_eventId = E177, affecting log entries = 1
+Parsing Error: parsed_eventId = 1c987a91, does not completely match groundtruth_eventId = E99, affecting log entries = 1
+Parsing Error: parsed_eventId = 25163d3c, does not completely match groundtruth_eventId = E285, affecting log entries = 1
+Parsing Error: parsed_eventId = 8a32d592, does not completely match groundtruth_eventId = E10, affecting log entries = 1
+Parsing Error: parsed_eventId = d91c10c6, does not completely match groundtruth_eventId = E286, affecting log entries = 1
+Parsing Error: parsed_eventId = e504f97a, does not completely match groundtruth_eventId = E285, affecting log entries = 1
+Parsing Error: parsed_eventId = 521b717b, does not completely match groundtruth_eventId = E286, affecting log entries = 1
+Parsing Error: parsed_eventId = 6606852c, does not completely match groundtruth_eventId = E96, affecting log entries = 1
+Parsing Error: parsed_eventId = 87a9c1de, does not completely match groundtruth_eventId = E204, affecting log entries = 1
+Precision: 0.9817, Recall: 0.9836, F1_measure: 0.9826, Parsing_Accuracy: 0.9560

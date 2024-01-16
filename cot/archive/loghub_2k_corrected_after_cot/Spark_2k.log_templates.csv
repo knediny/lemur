@@ -1,0 +1,37 @@
+EventId,EventTemplate,Occurrences
+8671f9ed,"mapred.tip.id is deprecated. Instead, use mapreduce.task.id",1
+6e5305e4,"mapred.task.partition is deprecated. Instead, use mapreduce.task.partition",1
+e4c5fa8f,"mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap",1
+863158e5,"mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id",1
+8ae18a42,"mapred.job.id is deprecated. Instead, use mapreduce.job.id",1
+17f432d4,Trying to register BlockManager,1
+15498983,Times: total = <*> boot = <*> init = <*> finish = <*>,375
+e07f39ae,Successfully started service 'sparkExecutorActorSystem' on port <*>,1
+b5ad3984,Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port <*>,1
+5a5c5838,Successfully registered with driver,1
+4dbcba27,Starting executor ID <*> on host <*>,1
+6c90e140,Started reading broadcast variable <*>,37
+03459f52,Server created on <*>,1
+29bc3dfc,"SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(yarn, curi); users with modify permissions: Set(yarn, curi)",2
+0800cc57,Saved output of task <*> to hdfs: <*> <*>,30
+ae0572db,Running task <*> in stage <*> (TID <*>,305
+0946f793,Remoting started; listening on addresses : [akka.tcp: <*> <*>,1
+932c104e,"Registered signal handlers for [TERM, HUP, INT]",1
+c0edc03b,Reading broadcast variable <*> took <*> ms,37
+3d6e0eb0,"Partition <*> not found, computing it",75
+f58da521,MemoryStore started with capacity <*> <*>,1
+6f51f217,Input split: hdfs: <*> <*> <*>,45
+9ba7fdc2,Got assigned task <*>,305
+d7f24216,Found block <*> locally,257
+33da0487,Finished task <*> in stage <*> (TID <*> <*> bytes result sent to driver,300
+24f60e3d,File Output Committer Algorithm version is <*>,30
+dc6ee373,Created local directory at <*>,1
+e1207c32,Connecting to driver: spark: <*> <*>,1
+7103ffa2,"Changing view acls to: yarn,curi",2
+91c45352,"Changing modify acls to: yarn,curi",2
+6ea52ee0,Block <*> stored as values in memory (estimated size <*> <*> free <*> <*>,37
+d6f850c8,Block <*> stored as bytes in memory (estimated size <*> <*> free <*> <*>,112
+e4d725b2,<*> started,1
+ee1592be,<*> remoting,1
+9a5790d1,<*> Committed,30
+4440ed37,<*> BlockManager,1

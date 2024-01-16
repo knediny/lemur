@@ -1,0 +1,76 @@
+EventId,EventTemplate,Occurrences
+3b251b90,writeDataToDB size <*>,1
+bd06d807,uploadStaticsToDB() onResult type = <*> obj= true,1
+1fda810d,uploadStaticsToDB failed message= true,1
+64b0f765,upLoadOneMinuteDataToEngine time= <*>,5
+00d03c97,tryToRecordAsBasicStepData bWrite true,1
+2b8e1d3e,"timeStamp back,extendReportTimeStamp= <*>",5
+057ae03f,theDayChanged <*>,1
+2b2b801d,stepSyncOrNot appSynTimes is <*> statsyncTimes is <*>,2
+71d384b3,stepSyncOrNot appSynTimes is <*>,3
+3ba40b70,startTimer start autoSync,3
+a9f50980,startSync hiSyncOption = HiSyncOption{syncAction= <*> syncMethod= <*> syncScope= <*> syncDataType= <*> syncModel= <*> pushAction= <*> = <*> who = <*>,5
+c14566b1,startListenerChange subscribeList = <*>,2
+9b2e9261,"startInsertSportSync start auto sync,app is <*>",2
+cdb47d81,"startInsertSportSync first <*> steps sync,do all sync",2
+e43ce457,setWriteDBLastDataMinute= <*>,1
+042d7a7a,setWriteDBLastDataMinute success,1
+0ac208fa,setTodayTotalDetailSteps= <*>,241
+0d02a5eb,setGoalNotifiShownRecord <*> false,1
+eee1a53e,setDiffTotalSteps= <*>,1
+53e4c07d,setBasicStandardSteps basicStandardStep= <*> restartSteps= <*>,1
+8764d489,sendSyncFailedBroadcast,5
+ffb006b5,"screen status unknown,think screen on",1
+6c94bdda,saveStatData() type = <*> = <*> = <*> is <*>,4
+6bc3bd21,saveRealTimeHealthDatasStat() size = <*> = <*>,1
+0ec8d9ad,saveHealthDetailData() saveOneDetailData fail hiHealthData = <*> = <*>,2
+dcf12028,saveHealthDetailData() deviceID = <*> <*> <*>,2
+00dbbc8e,reload : <*> restar <*>,1
+c1f5e07f,registersensorsuccess: true,1
+86bcfaea,reStartStepCounter,1
+b17fa7b8,processHandleBroadcastAction action: android.intent.action.TIME_TICK,144
+053748ce,processHandleBroadcastAction action: android.intent.action.SCREEN_ON,17
+93067dc4,onStandStepChanged <*>,260
+b080c338,onReceive action: android.intent.action.SCREEN_ON,17
+b891c816,onReceive action: android.intent.action.SCREEN_OFF,17
+9b299aa0,onExtend: <*> <*> <*> <*>,273
+897caf15,next day: <*>,1
+4bb46526,new date = <*> type= <*> <*>,17
+6e805a4c,needAutoSync autoSyncSwitch is open,5
+03a21551,isScreenOn true,1
+f13ffd3a,"insertHiHealthData() size = <*> = <*> Data Type = <*> = com.huawei.health,writeStatType = <*>",2
+034409f5,insertHiHealthData() end totalTime = <*>,2
+7b52b221,insertHiHealthData() checkAppType <*> appID = <*>,2
+04866441,insertHiHealthData() bulkSaveDetailHiHealthData fail errorCode = <*> = ERR_DATA_INSERT,1
+f257f214,"initUserPrivacy the userPrivacy switch is open, start push user data!",5
+1d4b8a6f,initUserPrivacy the userPrivacy is true,5
+e788f919,initEnviroument,1
+e4156b58,"initDataPrivacy the dataPrivacy switch is open, start push health data!",5
+38085a58,initDataPrivacy the dataPrivacy is true,5
+3f9b4da2,ifCanSync not! no cloud version,5
+e0a83abb,getTodayTotalDetailSteps = <*>,242
+b2b443fd,getTodaySportData mStepsRecordManager= <*>,6
+40f31420,getTodayBasicStandardSteps= <*>,2
+ff55d254,getStepCounterStatus= true,1
+3244bf49,getStepCounterStatus,1
+aa1d16b4,getDiffTotalSteps= <*>,2
+5fed72bf,getBinderPackageName packageName = com.huawei.health,8
+824b3d7b,"getAppContext() isAppValid health or wear, packageName = com.huawei.health",2
+0635a938,flushTempCacheToDB by stand,1
+b8f897f8,flush sensor data,17
+c5a628cf,deleteHealthNotification(),1
+8e523808,closeNotification...,1
+3616b800,clear(),1
+71835e93,checkInsertStatus stepSum or calorieSum is enough,2
+42ded8e2,checkInsertStatus stepStatSum or calorieStatSum is enough,2
+dbdd9143,"checkFirstSyncByType no such data in db ,type is <*> deviceCode is <*>",2
+60f8b5ac,"checkCurrentDay a new day comes , reset basicSyncCondition, currentDay is <*> oldDay is <*>",1
+4c5fdcd1,calculateCaloriesWithCache totalCalories= <*>,241
+9c70ac5e,calculateAltitudeWithCache totalAltitude= <*>,241
+1809a7f0,bulkSaveDetailHiHealthData() size = <*> = <*>,2
+5cdf7db4,REPORT : <*> <*> <*> <*>,136
+f76d293d,InsertEvent success begin: <*> end: <*>,1
+cab7fef5,InsertCallBack() onSuccess type = <*> data= true,1
+3688e669,Alarm uploadStaticsToDB totalSteps= <*> <*> <*> <*>,1
+3ba054a1,<*> result success,1
+0ce98313,<*> <*> <*> <*>,1

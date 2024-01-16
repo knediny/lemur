@@ -1,0 +1,44 @@
+EventId,EventTemplate,Occurrences
+62dfeccd,"image <*> at <*> use: on this node <*> local, <*> on other nodes sharing this instance storage",82
+76fa7094,image <*> at <*>,82
+d33d94b5,"[instance: <*> vcpu limit not specified, defaulting to unlimited",21
+62cd1e9b,"[instance: <*> memory limit: <*> MB, free: <*> MB",21
+8b0cbaf4,"[instance: <*> disk limit not specified, defaulting to unlimited",21
+84fce54d,[instance: <*> VM Stopped (Lifecycle Event),21
+17cee22d,[instance: <*> VM Started (Lifecycle Event),22
+704d0812,[instance: <*> VM Resumed (Lifecycle Event),44
+a0921dd2,[instance: <*> VM Paused (Lifecycle Event),22
+d998b00d,"[instance: <*> Total vcpu: <*> VCPU, used: <*> VCPU",21
+a18e4187,"[instance: <*> Total memory: <*> MB, used: <*> MB",21
+7c13f9ad,"[instance: <*> Total disk: <*> GB, used: <*> GB",21
+944eaae0,[instance: <*> Took <*> seconds to spawn the instance on the hypervisor.,22
+07cdf39d,[instance: <*> Took <*> seconds to destroy the instance on the hypervisor.,21
+9981588e,[instance: <*> Took <*> seconds to deallocate network for instance.,21
+6206c58c,[instance: <*> Took <*> seconds to build instance.,22
+fcc9fd98,[instance: <*> Terminating instance,22
+11014179,[instance: <*> Instance spawned successfully.,22
+53dc6369,[instance: <*> Instance destroyed successfully.,22
+a44f2c0c,[instance: <*> During sync_power_state the instance has a pending task (spawning). Skip.,43
+6592825f,[instance: <*> Deletion of <*>,21
+b81be278,[instance: <*> Deleting instance files <*>,21
+26f813af,[instance: <*> Creating image,21
+2ab23ae3,[instance: <*> Claim successful,21
+60c42758,"[instance: <*> Attempting claim: memory <*> MB, disk <*> GB, vcpus <*> CPU",21
+7d8b6b51,"While synchronizing instance power states, found <*> instances in the database and <*> instances on the hypervisor.",1
+51387d9b,Unknown base file: <*>,30
+346c93fc,Total usable vcpus: <*> total allocated vcpus: <*>,15
+220e55da,The instance sync for host <*> did not match. Re-created its InstanceList.,5
+97b9db26,Successfully synced instances from host <*>,2
+c2175f96,Running instance usage audit for host <*> from <*> <*> to <*> <*> <*> instances.,1
+8087023c,Removing base or swap file: <*>,21
+3964d785,Removable base files: <*>,30
+66acd71e,HTTP exception thrown: No instances found for any event,21
+d0c14aa4,Final resource view: <*> <*> <*> <*> <*> <*> <*> pci_stats=[],15
+16f9f039,Creating event <*> for instance <*>,22
+7d500875,Compute_service record updated for <*>,15
+b7d6364d,Base or swap file too young to remove: <*>,9
+61a90d8b,Auditing locally available compute resources for node <*>,15
+b36febb0,Active base files: <*>,82
+3075551a,"<*> ""POST <*> <*> len: <*> time: <*>",64
+8e2d20a1,"<*> ""GET <*> <*> len: <*> time: <*>",931
+ddd37b03,"<*> ""DELETE <*> <*> len: <*> time: <*>",22

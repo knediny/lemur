@@ -1,5 +1,10 @@
+# ----------------------------------------------------------------------------------
+# - Author Contact: wei.zhang, zwpride@buaa.edu.cn (Original code)
+# ----------------------------------------------------------------------------------
+
 from collections import Counter
 from collections import defaultdict
+import math
 
 class Vectorizer:
     def __init__(self):
@@ -74,6 +79,15 @@ class Vectorizer:
             var_types = len(tokens_in_same_position_other_docs)
             self.token_stats_at_position[(doc_id, position)] = (token, freq, freq_percent, var_types)
         return self.token_stats_at_position[(doc_id, position)]
+
+    def calculate_entropy_at_position(self, position):
+        stats = self.get_tokens_stats_at_position_all_docs(position)
+        total_docs = len(self.documents)
+        entropy = 0
+        for token, freq, _ in stats:
+            prob = freq / total_docs
+            entropy -= prob * math.log2(prob)
+        return entropy, stats
     
     def get_tokens_stats_at_position_all_docs(self, position):
         if not self.tokens_stats_at_position_all_docs[position]:
@@ -123,7 +137,7 @@ def main():
             "182.254.114.110:80",
             "HTTPS",
         ],
-        # 5: ["proxy.cse.cuhkedu.hk:5070", "close", "403", "bytes", "sent", "426", "bytes", "received", "lifetime", "00:02"],
+        5: ["proxy.cse.cuhkedu.hk:5070", "close", "403", "bytes", "sent", "426", "bytes", "received", "lifetime", "00:02"],
         # 6: ["get.sogou.com:80", "close", "651", "bytes", "sent", "346", "bytes", "received", "lifetime", "00:03"],
         # 7: ["proxy.cse.cuhkedu.hk:5070", "close", "408", "bytes", "sent", "421", "bytes", "received", "lifetime", "00:03"],
         8: [
@@ -159,12 +173,12 @@ def main():
     print(vectorizer.get_longest_common_subsequences())
 
     # Testing get_difference_from_common_subsequences method for doc_id=2
-    print("\nDifference and Common sequences for document id 2:")
-    diff = vectorizer.get_difference_from_common_subsequences(2)
+    print("\nDifference and Common sequences for document id 11:")
+    diff = vectorizer.get_difference_from_common_subsequences(11)
     # print("Common:", common)
     print("Difference:", diff)
 
-    did, pos = 2, 0
+    did, pos = 11, 0
     # Testing get_token_stats_at_position method for doc_id=2 and position=1
     print(f"\nToken stats at position {pos} for document id {did}:")
     token, freq, freq_percent, var_types = vectorizer.get_token_stats_at_position(did, pos)

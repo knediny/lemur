@@ -1,17 +1,18 @@
-import sys
-
-sys.path.append(".")
+# ----------------------------------------------------------------------------------
+# - Author Contact: wei.zhang, zwpride@buaa.edu.cn
+#
+# - Inherits basic inference framework of LOGAPI.
+# - Original code is to enhance the ability to inference.
+# ----------------------------------------------------------------------------------
 
 import os
 from parser.parser import Parser
 from utils import evaluator
 import pandas as pd
-import datetime
 
-timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 input_dir = "data/loghub_2k_corrected/"  # The input directory of log file
 output_dir = (
-    f"result/loghub_2k_corrected{timestamp}/"  # The output directory of parsing results
+    f"result/loghub_2k_corrected/"  # The output directory of parsing results
 )
 
 benchmark_settings = {
@@ -21,11 +22,8 @@ benchmark_settings = {
         "regex": [r"blk_-?\d+", r"(\d+\.){3}\d+(:\d+)?"],
         "delimiter": [""],
         "k": 2,
-        "n_candidate": 32,
-        "freq_threshold": 0.3,
-        "type_theshold": 0,
+        "entropy_theshold": 2.0,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 5,
         "digit_percent": 0,
     },
     "Hadoop": {
@@ -33,13 +31,10 @@ benchmark_settings = {
         "log_format": "<Date> <Time> <Level> \[<Process>\] <Component>: <Content>",
         "regex": [r"(\d+\.){3}\d+"],
         "delimiter": [],
-        "k": 12,
-        "n_candidate": 128,
-        "freq_threshold": 0.5,
-        "type_theshold": 0,
-        "jaccard_similarity_threshold": 0.6,
-        "first_weight": 10,
-        "digit_percent": 0,
+        "k": 8,
+        "entropy_theshold": 1.7,
+        "jaccard_similarity_threshold": 0.7,
+        "digit_percent": 0.0,
     },
     "Spark": {
         "log_file": "Spark/Spark_2k.log",
@@ -51,11 +46,8 @@ benchmark_settings = {
         # "regex": [r"(\d+\.){3}\d+", r"\b[KGTM]?B\b", r"([\w-]+\.){2,}[\w-]+"],
         "delimiter": [],
         "k": 6,
-        "n_candidate": 256,
-        "freq_threshold": 0.5,
-        "type_theshold": 4,
+        "entropy_theshold": 2.10,
         "jaccard_similarity_threshold": 0.6,
-        "first_weight": 10,
         "digit_percent": 0,
     },
     "Zookeeper": {
@@ -63,12 +55,9 @@ benchmark_settings = {
         "log_format": "<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>",
         "regex": [r"(/|)(\d+\.){3}\d+(:\d+)?"],
         "delimiter": [],
-        "k": 3,
-        "n_candidate": 64,
-        "freq_threshold": 0.5,
-        "type_theshold": 3,
-        "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
+        "k": 8,
+        "entropy_theshold": 2.2,
+        "jaccard_similarity_threshold": 0.9,
         "digit_percent": 0,
     },
     "BGL": {
@@ -77,11 +66,8 @@ benchmark_settings = {
         "regex": [r"core\.\d+", r"\/(\w+\/?)+"],
         "delimiter": [],
         "k": 9,
-        "n_candidate": 32,
-        "freq_threshold": 0.07,
-        "type_theshold": 6,
+        "entropy_theshold": 5.5,
         "jaccard_similarity_threshold": 0.6,
-        "first_weight": 10,
         "digit_percent": 0,
     },
     "HPC": {
@@ -90,11 +76,8 @@ benchmark_settings = {
         "regex": [r"\\042[A-Za-z0-9\:\-\\]+"],
         "delimiter": [],
         "k": 9,
-        "n_candidate": 64,
-        "freq_threshold": 0.2,
-        "type_theshold": 5,
+        "entropy_theshold": 1.2,
         "jaccard_similarity_threshold": 0.6,
-        "first_weight": 10,
         "digit_percent": 0.4,
     },
     "Thunderbird": {
@@ -103,11 +86,8 @@ benchmark_settings = {
         "regex": [r"(\d+\.){3}\d+", r"(/[\w-. ]+)+"],
         "delimiter": [],
         "k": 11,
-        "n_candidate": 64,
-        "freq_threshold": 0.1,
-        "type_theshold": 2,
+        "entropy_theshold": 4.1,
         "jaccard_similarity_threshold": 0.4,
-        "first_weight": 10,
         "digit_percent": 0.05,
     },
     "Windows": {
@@ -116,11 +96,8 @@ benchmark_settings = {
         "regex": [r"0x.*?\s"],
         "delimiter": [],
         "k": 8,
-        "n_candidate": 128,
-        "freq_threshold": 0.1,
-        "type_theshold": 1,
+        "entropy_theshold": 1.1,
         "jaccard_similarity_threshold": 0.6,
-        "first_weight": 10,
         "digit_percent": 0.0,
     },
     "Linux": {
@@ -130,12 +107,9 @@ benchmark_settings = {
         # "regex": [r"(\d+\.){3}\d+", r"\d{2}:\d{2}:\d{2}", r"J([a-z]{2})"],
         "delimiter": [r""],
         "k": 25,
-        "n_candidate": 256,
-        "freq_threshold": 0.94,  # 0.35 0.69086 0.9327
-        "type_theshold": 2,
-        "jaccard_similarity_threshold": 0.3,  # important
-        "first_weight": 20,
-        "digit_percent": 0.0,
+        "entropy_theshold": 0.09,
+        "jaccard_similarity_threshold": 0.33,
+        "digit_percent": 0.3,
     },
     "Android": {
         "log_file": "Android/Android_2k.log",
@@ -148,11 +122,8 @@ benchmark_settings = {
         ],
         "delimiter": [r""],
         "k": 9,
-        "n_candidate": 32,
-        "freq_threshold": 0.1,
-        "type_theshold": 3,
+        "entropy_theshold": 3.5,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
         "digit_percent": 0.0,
     },
     "HealthApp": {
@@ -161,11 +132,8 @@ benchmark_settings = {
         "regex": [],
         "delimiter": [r""],
         "k": 12,
-        "n_candidate": 32,
-        "freq_threshold": 0.1,
-        "type_theshold": 4,
+        "entropy_theshold": 1.8,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
         "digit_percent": 0.0,
     },
     "Apache": {
@@ -174,11 +142,8 @@ benchmark_settings = {
         "regex": [r"(\d+\.){3}\d+"],
         "delimiter": [],
         "k": 12,
-        "n_candidate": 32,
-        "freq_threshold": 0.1,
-        "type_theshold": 4,
+        "entropy_theshold": 0,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
         "digit_percent": 0.0,
     },
     "Proxifier": {
@@ -192,11 +157,8 @@ benchmark_settings = {
         ],
         "delimiter": [r"\(.*?\)"],
         "k": 12,
-        "n_candidate": 32,
-        "freq_threshold": 0.1,
-        "type_theshold": 3,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
+        "entropy_theshold": 0.1,
         "digit_percent": 0.0,
     },
     "OpenSSH": {
@@ -205,11 +167,8 @@ benchmark_settings = {
         "regex": [r"(\d+\.){3}\d+", r"([\w-]+\.){2,}[\w-]+"],
         "delimiter": [],
         "k": 4,
-        "n_candidate": 128,
-        "freq_threshold": 0.98,
-        "type_theshold": 5,
+        "entropy_theshold": 0.2,
         "jaccard_similarity_threshold": 0.5,
-        "first_weight": 20,
         "digit_percent": 0.3,
     },
     "OpenStack": {
@@ -218,11 +177,8 @@ benchmark_settings = {
         "regex": [r"((\d+\.){3}\d+,?)+", r"/.+?\s", r"\d+"],
         "delimiter": [],
         "k": 20,
-        "n_candidate": 32,
-        "freq_threshold": 0.1,
-        "type_theshold": 5,
+        "entropy_theshold": 2.3,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 10,
         "digit_percent": 0.26,
     },
     "Mac": {
@@ -230,12 +186,9 @@ benchmark_settings = {
         "log_format": "<Month>  <Date> <Time> <User> <Component>\[<PID>\]( \(<Address>\))?: <Content>",
         "regex": [r"([\w-]+\.){2,}[\w-]+"],
         "delimiter": [],
-        "k": 30,
-        "n_candidate": 128,
-        "freq_threshold": 0.03,
-        "type_theshold": 5,
+        "k": 12,
+        "entropy_theshold": 4.7,
         "jaccard_similarity_threshold": 0.7,
-        "first_weight": 3,
         "digit_percent": 0.25,
     },
     # '安徽移动': {
@@ -244,7 +197,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -255,7 +207,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -266,7 +217,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -277,7 +227,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -288,7 +237,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -299,7 +247,6 @@ benchmark_settings = {
     #     'regex': [],
     #     "min_event_count": 2,
     #     "merge_percent": 0.6,
-    #     "n_candidate": 64,
     #     "k": 6,
     #     "m": 3,
     #     "sample_count": 0,
@@ -307,7 +254,7 @@ benchmark_settings = {
 }
 
 
-def inference(dataset, setting):
+def inference(dataset, setting, debug=False):
     input_file = os.path.join(input_dir, os.path.dirname(setting["log_file"]))
     log_file = os.path.basename(setting["log_file"])
     parser = Parser(
@@ -317,28 +264,25 @@ def inference(dataset, setting):
         delimiter=setting["delimiter"],
         log_format=setting["log_format"],
         dataset=dataset,
-        n_candidate=setting["n_candidate"],
         k=setting["k"],
-        type_threshold=setting["type_theshold"],
-        freq_threshold=setting["freq_threshold"],
+        entropy_theshold=setting["entropy_theshold"],
         jaccard_similarity_threshold=setting["jaccard_similarity_threshold"],
-        first_weight=setting["first_weight"],
         digit_percent=setting["digit_percent"],
+        debug=debug
     )
     parser.parse(log_file)
 
-    bechmark_result = {"Dataset": dataset}
-    bechmark_result.update(evaluator.evaluate(
+    benchmark_result = {"Dataset": dataset}
+    benchmark_result.update(evaluator.evaluate(
         groundtruth=os.path.join(input_file, log_file + "_structured_corrected.csv"),
         parsedresult=os.path.join(output_dir, log_file + "_structured.csv"),
-        debug=False
+        debug=debug
     ))
 
-    bechmark_results.append(bechmark_result)
+    benchmark_results.append(benchmark_result)
 
-
-bechmark_results = []
+benchmark_results = []
 for dataset, setting in benchmark_settings.items():
-    inference(dataset, setting)
-df_result = pd.DataFrame(bechmark_results)
-df_result.to_csv(f"{output_dir}/{output_dir}_benckmark_results.csv", float_format="%.6f")
+    inference(dataset, setting, False)
+df_result = pd.DataFrame(benchmark_results)
+df_result.to_csv(f"{output_dir}/benckmark_results.csv", float_format="%.6f")

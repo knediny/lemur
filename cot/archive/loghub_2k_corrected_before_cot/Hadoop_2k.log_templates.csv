@@ -1,0 +1,119 @@
+EventId,EventTemplate,Occurrences
+7fbe270e,yarn.client.max-cached-nodemanagers-proxies : <*>,1
+5c8daeb8,task_ <*> <*> r_ <*> Task Transitioned from NEW to SCHEDULED,1
+a29e8b12,task_ <*> <*> m_ <*> Task Transitioned from SCHEDULED to RUNNING,10
+2a876070,task_ <*> <*> m_ <*> Task Transitioned from RUNNING to SUCCEEDED,1
+1465511b,task_ <*> <*> m_ <*> Task Transitioned from NEW to SCHEDULED,10
+8c3b0d96,reduceResourceRequest: <memory: <*> vCores: <*>,1
+62365dbe,queue: default,1
+7ec61b2b,nodeBlacklistingEnabled: true,1
+07a75a5d,maxTaskFailuresPerNode is <*>,1
+de0154a7,maxContainerCapability: <memory: <*> vCores: <*>,1
+8783cb60,mapResourceRequest: <memory: <*> vCores: <*>,1
+dff97897,loaded properties from <*>,1
+2512fb78,job_ <*> <*> Transitioned from SETUP to RUNNING,1
+562be96a,job_ <*> <*> Transitioned from NEW to INITED,1
+5f5d700a,job_ <*> <*> Transitioned from INITED to SETUP,1
+e4372499,getResources( ) for application_ <*> <*> ask= <*> release= <*> newContainers= <*> finishedContainers= <*> resourcelimit= <memory: <*> vCores: <*> knownNMs= <*>,12
+168a0869,blacklistDisablePercent is <*>,1
+2fd3fb67,attempt_ <*> <*> r_ <*> <*> TaskAttempt Transitioned from NEW to UNASSIGNED,1
+8bc6c030,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from UNASSIGNED to ASSIGNED,10
+c40d42cd,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from SUCCESS_ CONTAINER_ CLEANUP to SUCCEEDED,1
+39e188ef,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from RUNNING to SUCCESS_ CONTAINER_ CLEANUP,1
+3a43fabc,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from RUNNING to FAIL_ CONTAINER_ CLEANUP,2
+cab4d7aa,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from NEW to UNASSIGNED,13
+56242cb3,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from FAIL_ TASK_ CLEANUP to FAILED,2
+f418348d,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from FAIL_ CONTAINER_ CLEANUP to FAIL_ TASK_ CLEANUP,2
+09e187db,attempt_ <*> <*> m_ <*> <*> TaskAttempt Transitioned from ASSIGNED to RUNNING,10
+602cb0dc,adding path spec: /ws/*,1
+23287a46,adding path spec: /mapreduce/*,1
+01425cf2,Web app /mapreduce started at <*>,1
+71478d85,We launched <*> speculations. Sleeping <*> milliseconds.,1
+0594ecc2,Using mapred newApiCommitter.,1
+916d4a74,Using callQueue class java.util.concurrent.LinkedBlockingQueue,2
+293bdc87,Upper limit on the thread pool size is <*>,1
+d50f6b4f,Thread <*> threw an Exception.,1
+5ae6784d,The job-jar file on the remote FS is hdfs: <*> <*> <*> <*>,1
+a7fa73a4,The job-conf file on the remote FS is /tmp/hadoop-yarn/staging/msrabi/.staging/job_ <*> <*>,1
+77de8433,TaskAttempt: [attempt_ <*> <*> m_ <*> <*> using containerId: [container_ <*> <*> <*> <*> on NM: <*> <*>,10
+2a9de0c8,Task: attempt_ <*> <*> m_ <*> <*> - exited : java.net.NoRouteToHostException: No Route to Host from <*> to <*> <*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see: http: //wiki.apache.org/hadoop/NoRouteToHost,2
+80cf8946,Task succeeded with attempt attempt_ <*> <*> m_ <*> <*>,1
+2420a782,Task cleanup failed for attempt attempt_ <*> <*> m_ <*> <*>,2
+e5777033,Starting Socket Reader <*> for port <*>,2
+9cd09cca,Started <*> <*>,1
+6e4b306c,Slow ReadProcessor read fields took <*> ( threshold= <*> ; ack: seqno: <*> status: SUCCESS status: ERROR downstreamAckTimeNanos: <*> targets: <*> <*> <*> <*>,1
+204921cb,Size of containertokens_ dob is <*>,1
+1e8b5825,Shuffle port returned by ContainerManager for attempt_ <*> <*> m_ <*> <*> : <*>,10
+f1d95a84,Scheduling a redundant attempt for task task_ <*> <*> m_ <*>,1
+32f6793e,Scheduled snapshot period at <*> second( s) .,1
+b9a1e659,Retrying connect to server: <*> <*> Already tried <*> time( s) ; retry policy is RetryUpToMaximumCountWithFixedSleep( maxRetries= <*> sleepTime= <*> MILLISECONDS),146
+6659e8b0,Resolved <*> to /default-rack,39
+3a2b3aef,Registering class <*> for class <*>,9
+5ba9445a,Registered webapp guice modules,1
+ec6b84b4,Reduce slow start threshold reached. Scheduling reduces.,1
+1fbfd66f,Reduce slow start threshold not met. completedMapsForReduceSlowstart <*>,130
+2334243f,Received completed container container_ <*> <*> <*> <*>,2
+109530a1,"Recalculating schedule, headroom= <memory: <*> vCores: <*>",131
+acefceaf,Putting shuffle token <*> <*>,1
+765c4646,Progress of TaskAttempt attempt_ <*> <*> m_ <*> <*> is : <*>,289
+8efe8cd4,Processing the event EventType: TASK_ ABORT,2
+cb97615d,Processing the event EventType: JOB_ SETUP,1
+49c660e5,Processing the event EventType: CONTAINER_ REMOTE_ LAUNCH for container container_ <*> <*> <*> <*> taskAttempt attempt_ <*> <*> m_ <*> <*>,10
+3cc98995,Processing the event EventType: CONTAINER_ REMOTE_ CLEANUP for container container_ <*> <*> <*> <*> taskAttempt attempt_ <*> <*> m_ <*> <*>,3
+274c9465,OutputCommitter set <*> <*> <*>,1
+d79644a2,OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter,1
+b7709ad1,Opening proxy : <*> <*>,13
+5aed0a9f,Number of reduces for job job_ <*> <*> = <*>,1
+3a2741bf,Num completed Tasks: <*>,1
+26ca0a26,Not uberizing job_ <*> <*> because: not enabled; too many maps; too much input;,1
+fc657c96,MRAppMaster metrics system started,1
+a0689d5f,"MRAppMaster launching normal, non-uberized, multi-container job job_ <*> <*>",1
+8d3bc8dd,Logging to <*> org.mortbay.log) via <*>,1
+22400549,Launching attempt_ <*> <*> m_ <*> <*>,10
+b472745b,"Kind: YARN_ AM_ RM_ TOKEN, Service: , Ident: ( appAttemptId { application_ id { id: <*> cluster_ timestamp: <*> } attemptId: <*> } keyId: <*>",1
+fd01b358,KILLING attempt_ <*> <*> m_ <*> <*>,3
+2ae520fa,Jetty bound to <*> <*>,1
+35980cec,JVM with ID: jvm_ <*> <*> m_ <*> given task: attempt_ <*> <*> m_ <*> <*>,10
+899ffaa1,JVM with ID : jvm_ <*> <*> m_ <*> asked for a task,10
+3fcb5711,JOB_ CREATE job_ <*> <*>,1
+d4303f60,Instantiated MRClientService at <*> <*>,1
+4aa707bc,Input size for job job_ <*> <*> = <*> Number of splits = <*>,1
+0c5b0a59,IPC Server listener on <*> starting,2
+ccc17099,IPC Server Responder: starting,2
+0859dbfb,Http request log for http.requests.mapreduce is not defined,1
+0f71bb1f,Got allocated containers <*>,10
+468a2899,Failed to renew lease for [DFSClient_ NONMAPREDUCE_ <*> <*> for <*> seconds. Will retry shortly ...,326
+bf879bbd,Extract jar: file: /D: <*> to C: \Users\msrabi\AppData\Local\Temp\Jetty_ <*> <*> <*> <*> <*> mapreduce_ _ _ _ <*>,1
+3c5bb15c,Executing with tokens:,1
+872a93bf,Event Writer setup for JobId: job_ <*> <*> File: hdfs: <*> <*> <*> <*> <*> <*> <*>,1
+16ffd5a6,Error writing History Event: <*>,1
+bfda6eae,Error Recovery for block <*> blk_ <*> <*> in pipeline <*> <*> <*> <*> bad datanode <*> <*>,1
+3a03968c,Emitting job history data to the timeline server is not enabled,1
+b4ff2357,ERROR IN CONTACTING RM.,147
+d4e9041b,Done acknowledgement from attempt_ <*> <*> m_ <*> <*>,1
+b82558e7,Diagnostics report from attempt_ <*> <*> m_ <*> <*> Error: java.net.NoRouteToHostException: No Route to Host from <*> to <*> <*> failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see: http: //wiki.apache.org/hadoop/NoRouteToHost,4
+8971c069,Diagnostics report from attempt_ <*> <*> m_ <*> <*> Container killed by the ApplicationMaster.,1
+9448ee9b,DefaultSpeculator.addSpeculativeAttempt -- we are speculating task_ <*> <*> m_ <*>,1
+2e14b902,Default file system [hdfs: <*> <*>,3
+2ef07439,DataStreamer Exception,1
+7562d8e0,DFSOutputStream ResponseProcessor exception for block <*> blk_ <*> <*>,1
+0a573c54,Created MRAppMaster for application appattempt_ <*> <*> <*>,1
+669673fb,Container complete event for unknown container id container_ <*> <*> <*> <*>,1
+b5061881,Connecting to ResourceManager at <*> <*>,1
+95334e28,"Cannot assign container Container: [ContainerId: container_ <*> <*> <*> <*> NodeId: <*> <*> NodeHttpAddress: <*> <*> Resource: <memory: <*> vCores: <*> Priority: <*> Token: Token { kind: ContainerToken, service: <*> <*> }, ] for a map as either container memory less than required <memory: <*> vCores: <*> or no pending map tasks - maps.isEmpty= true",1
+7fad442f,Before Scheduling: PendingReds: <*> ScheduledMaps: <*> ScheduledReds: <*> AssignedMaps: <*> AssignedReds: <*> CompletedMaps: <*> CompletedReds: <*> ContAlloc: <*> ContRel: <*> HostLocal: <*> RackLocal: <*>,5
+fd3df1cb,Auth successful for job_ <*> <*> ( auth: SIMPLE),10
+763a5a6e,Assigned container container_ <*> <*> <*> <*> to attempt_ <*> <*> m_ <*> <*>,10
+cea2a2b0,All maps assigned. Ramping up all remaining reduces: <*>,1
+6f3275df,After Scheduling: PendingReds: <*> ScheduledMaps: <*> ScheduledReds: <*> AssignedMaps: <*> AssignedReds: <*> CompletedMaps: <*> CompletedReds: <*> ContAlloc: <*> ContRel: <*> HostLocal: <*> RackLocal: <*>,12
+85f1c7bc,Address change detected. Old: <*> <*> New: <*> <*>,476
+0b0a461e,Adding protocol <*> to the server,1
+05f480ce,Adding job token for job_ <*> <*> to jobTokenSecretManager,1
+7c188553,Adding <*> tokens and <*> secret keys for NM use for launching container,1
+014f3062,Added global filter 'safety' ( class= <*>,1
+ceb6d1ff,Added filter AM_ PROXY_ FILTER ( class= org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context static,1
+0cf27fee,Added filter AM_ PROXY_ FILTER ( class= org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context mapreduce,1
+5e5abb37,Added attempt_ <*> <*> m_ <*> <*> to list of failed maps,2
+d79eb00e,ATTEMPT_ START task_ <*> <*> m_ <*>,10
+0e4be9d6,<*> failures on node <*>,2
+ff52c40c,<*>,1

@@ -1,0 +1,178 @@
+EventId,EventTemplate,Occurrences
+09f718ce,xinetd startup succeeded,1
+6208f537,xinetd Version <*> started with libwrap loadavg options compiled in.,1
+fadd4d28,unable to qualify my own domain name <*> -- using short name,10
+b38a68e4,time reset <*> <*>,1
+9bc27c87,syslog-ng version <*> <*>,1
+e7db57c4,syslog-ng startup succeeded,1
+ef226888,synchronized to <*> stratum <*>,568
+9b1751bd,succeeded,2
+b51ad4c2,session opened for user root by (uid= <*>,19
+3be46d32,session closed for user root,24
+19d28e10,scanning scsi channel <*> [virtual] for logical drives,1
+a358220c,scanning scsi channel <*> [Phy <*> for non-raid devices,1
+25830347,rpc.statd startup succeeded,1
+179ee787,"routing cache hash table of <*> buckets, <*>",1
+cff1981d,root= LABEL= <*> <*> <*> console= <*> fastboot BOOT_IMAGE= <*>,1
+9550986e,removing time,2
+8857d862,removing telnet,1
+35a2dfee,removing rsync,1
+69f0f986,removing printer,1
+c27729e2,removing ntalk,1
+077005f0,removing kshell,1
+f8c3256b,removing klogin,1
+ce314661,removing ftp,1
+73265bab,removing eklogin,1
+a0183fd1,removing echo,2
+21dea3dd,removing daytime,2
+260dcbc4,removing chargen,2
+b1b5acf1,registered new <*> <*>,4
+e2a20d6b,probe of <*> failed with error <*>,1
+4e3b8494,probe new device <*> <*> <*> <*> bus <*> slot <*> func <*>,1
+7d73b4c5,portmap startup succeeded,1
+f36e8103,passed.,1
+f6df922d,not allocating divert_blk for non-ethernet device lo,0
+cafdce56,not allocating divert_blk for non-ethernet device <*>,2
+70f0281f,no floppy controllers <*>,1
+a0162353,mounted filesystem with ordered data mode.,3
+81b392fb,md driver <*> MAX_MD_DEVS= <*> MD_SB_DISKS= <*>,1
+b909c55d,kernel time sync enabled <*>,1
+97e54efd,kernel time sync disabled <*>,1
+812f945b,initializing netlink socket <*>,1
+84d10a1e,initialized,1
+264d5edd,gmetad startup succeeded,1
+618dc54b,fw version: <*> bios version: <*>,1
+9da1d473,error: Bind to port <*> on <*> failed: Address already in use.,1
+6391d957,data_thread() got not answer from any <*> datasource,819
+1c50da41,connection lost: 'Connection <*>,3
+9d05aa60,connection from <*>,2
+8aa8bcf0,colour VGA+ <*>,1
+7ce70afa,autorun ...,2
+4d12f6fa,assuming drive cache: write through,1
+6a604788,asking for cache data failed,1
+ffa152d9,apic_id <*> version <*> address <*> GSI <*>,3
+b3dc57c4,allocating divert_blk for <*>,2
+f12337f0,[ib_sm_sweep.c: <*> No topology change,62
+16e16eba,[ib_sm_sweep.c: <*> No configuration change required,62
+fac7f159,[ib_sm_sweep.c: <*> ********************** NEW SWEEP ********************,62
+81fd226f,Warning: we failed to resolve trusted host name <*> <*>,1
+31c7079d,Warning: we failed to resolve data source name <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*>,34
+3348c475,Warning: we failed to resolve data source name <*> <*> <*>,0
+708630cc,Wait for ready failed before probe !,6
+268e6e9a,Version <*> Starting,1
+f927eeab,Using software bounce buffering for IO (SWIOTLB),1
+415e7cee,Using configuration type <*>,1
+49054f89,Using MMCONFIG at <*>,1
+5925103d,Using IOAPIC for interrupt routing,1
+6df54444,Using HPET based <*>,1
+a18fe907,Using ACPI for IRQ routing,1
+fea49fce,Using <*> MHz HPET timer.,1
+f5f1f1b7,User <*> coming from <*> authenticated.,2
+e3539859,Unregistering netfilter hooks,1
+2521b0cb,Unknown cmd <*> <*> <*> on <*>,1
+e66efd16,Transparent bridge - <*> <*> <*>,1
+0bbba1b5,"Trace cache: <*> uops, <*> D cache: <*>",5
+54e256e6,Subsystem revision <*>,1
+2d44d780,Starting ts_fixup: succeeded,1
+f06db42b,Starting in permissive <*>,1
+194dd7c1,Started working: <*> available service,1
+5f20bd8d,Server listening on : : port <*>,1
+4a1f634b,START: tftp pid= <*> from= <*>,1
+6259212f,SPCR <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+30c0ff51,Registering secondary module capability,1
+4e48601f,Registering netfilter hooks,1
+c47c3599,Registered protocol family <*>,5
+4f67b71e,Received SNMP packet(s) from <*>,1
+3ea26041,Reading included configuration file: <*> <*> [line= <*>,17
+7c6c843d,RSDT <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+826feb9e,RSDP <*> DELL ) @ <*>,1
+6c002bda,RRD_update <*> illegal attempt to update using time <*> when last update time is <*> (minimum one second step),11
+1d7c8312,RNG not detected,1
+c0eb874d,Processor ANSI SCSI revision: <*>,1
+8e7bb235,Processor <*> (supports <*>,4
+11f104b9,Probing PCI hardware (bus <*>,1
+8669b0cb,Power Button (FF) <*>,1
+ee83b678,Physical Processor ID: <*>,5
+61ff7871,"PCI interrupt <*> <*> <*> -> GSI <*> (level, low) -> IRQ <*>",11
+a321ae0b,PCI Root Bridge <*> <*> <*>,1
+b7d38de7,PCI Interrupt Routing Table [\_SB_.PCI0.PICH._PRT],1
+627b8b43,PCI Interrupt Routing Table [\_SB_.PCI0.PBLO._PRT],1
+25c404d4,PCI Interrupt Routing Table [\_SB_.PCI0.PBHI._PRT],1
+1eb5dac0,PCI Interrupt Routing Table [\_SB_.PCI0.PALO._PRT],1
+b00482ac,PCI Interrupt Routing Table [\_SB_.PCI0.PALO.DOBB._PRT],1
+18e241de,PCI Interrupt Routing Table [\_SB_.PCI0.PALO.DOBA._PRT],1
+f3156356,PCI Interrupt Routing Table <*>,4
+27c42f65,PCI Interrupt Link [LNKH] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*> disabled.,1
+f597decf,PCI Interrupt Link [LNKG] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*> disabled.,1
+0f0d1cde,PCI Interrupt Link [LNKF] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*> disabled.,1
+9d513600,PCI Interrupt Link [LNKE] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*> disabled.,1
+605bf269,PCI Interrupt Link [LNKD] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*> disabled.,1
+17f15ddc,PCI Interrupt Link [LNKC] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*>,1
+0e0ee77c,PCI Interrupt Link [LNKB] (IRQs <*> <*> <*> <*> <*> <*> <*> <*>,1
+794ab103,PCI Interrupt Link [LNKA] (IRQs <*> <*> <*> <*> <*> <*> <*> <*> <*>,1
+fdb217dd,PCI Hot Plug PCI Core version: <*>,1
+85d6aca3,Now running on <*> privileges.,2
+182a3d2f,My unqualified host name <*> unknown; sleeping for retry,5
+14e66fdf,Mounting other filesystems: failed,1
+42c646d7,Mounting NFS filesystems: succeeded,1
+cae85618,Mounted root <*> filesystem).,1
+f27af86e,MegaRAID Model: LD <*> <*> <*> Rev: <*>,1
+d8b6bf9c,MCFG <*> DELL PE BKC <*> MSFT <*> @ <*>,7
+04795c89,MADT <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+73729144,Local disconnected: Connection <*>,3
+7f47bdfa,Local APIC address <*>,1
+fe6f34b5,LSI Logic MegaRAID <*>,1
+3322c87b,LAPIC_NMI <*> high edge <*>,4
+460b8859,LAPIC <*> <*> enabled),4
+2188fc64,Interpreter enabled,1
+7ba659c5,Intel(R) Xeon(TM) CPU <*> stepping <*>,1
+0d37b2b4,Installing public key <*>,1
+7f533fb9,Initializing.,1
+f63012ac,IOAPIC <*> <*> <*>,3
+c234208b,INT_SRC_OVR (bus <*> bus_irq <*> global_irq <*> high level),1
+69b9a4f8,INT_SRC_OVR (bus <*> bus_irq <*> global_irq <*> dfl dfl),1
+18cdff90,Hash tables configured (established <*> bind <*>,1
+0c06938f,HPET id: <*> base: <*>,1
+8dfbb35d,HPET <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+ea332603,FADT <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+5a8f4cd8,Disk quotas <*>,1
+b79ffc59,Disabled at runtime.,1
+7409c064,Direct-Access ANSI SCSI revision: <*>,1
+75cdbabe,Device: <*> Temperature changed <*> Celsius to <*> Celsius since last report,1
+481e7ae7,Detected <*> MHz processor.,1
+d878e0f4,DSDT <*> DELL PE BKC <*> MSFT <*> @ <*>,0
+3405a83b,DHCPREQUEST for <*> <*> from <*> <*> <*> <*> ba: <*> via <*> unknown lease <*>,9
+560d360f,DHCPREQUEST for <*> <*> from <*> <*> <*> <*> ba: <*> via <*>,3
+d03570df,DHCPOFFER on <*> to <*> <*> <*> <*> ba: <*> via <*>,5
+0e070a01,DHCPDISCOVER from <*> <*> <*> <*> ba: <*> via <*> network A_net: no free leases,15
+a589a67b,DHCPDISCOVER from <*> <*> <*> <*> ba: <*> via <*>,5
+18480cf4,DHCPACK on <*> to <*> <*> <*> <*> ba: <*> via <*>,3
+8ebd9816,Creating Topspin <*>,1
+4211e0af,Compressed image found at block <*>,1
+a74214e1,Changing permissions on special file <*>,1
+7cc8df47,Cannot open file <*> such file or directory),1
+953a8d97,Autodetecting RAID arrays.,2
+181605bf,Assuming <*> system bus speed for PIO modes; override with idebus= xx,1
+01635e5f,<*> used by <*>,3
+ff435a39,"<*> to= root, ctladdr= root <*> delay= <*> <*> <*> xdelay= <*> <*> <*> mailer= relay, pri= <*> relay= <*> <*> dsn= <*> stat= Deferred: Connection refused by <*>",10
+897893c3,"<*> from= root, size= <*> class= <*> nrcpts= <*> msgid= <*> relay= <*>",10
+c90aaf56,<*> cache: <*>,5
+d2339b5c,<*> USB HID core driver,1
+39e6a2da,<*> KBD port at <*> irq <*>,1
+a4a1188a,<*> AUX port at <*> irq <*>,1
+1738487f,<*> <*> initialised: <*>,1
+3d69ac33,<*> <*> SCSI BP Rev: <*>,1
+6e5f98de,<*> <*> NIC Link is Up <*> Mbps Full Duplex,1
+c66d4427,<*> <*> Intel(R) <*>,2
+87a67fd5,<*> <*> <*> <*> <*> ak Exp $,1
+0ce98313,<*> <*> <*> <*>,1
+dede275d,<*> <*>,1
+be873e05,<*> (Release Date: Mon Sep <*> <*> <*> <*> EDT <*>,0
+50b535c3,<*> (Release Date: Fri Dec <*> <*> <*> <*> EST <*>,2
+573f89d2,<*> (Kernel Module GPG key),1
+ff52c40c,<*>,1
+cd2a6bd5,... autorun DONE.,2
+b8b1d713,(supports <*> <*> <*>,1
+db5c62ac,(root) CMD <*>,5
+b6651574,(root) CMD (run-parts <*>,14
+67669ebc,(C) <*> Netfilter core team,4

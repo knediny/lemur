@@ -1,0 +1,51 @@
+EventId,EventTemplate,Occurrences
+7b83d3f0,warning,205
+28889bc4,wait (command <*>,66
+1ee85f6c,starting,1
+75101dcd,running,162
+bb73aacf,risBoot (command <*> Error: Timed out while waiting for SRM prompt: <ABORT code completed>,1
+4445e8e0,risBoot (command <*>,1
+fd93b690,psu failure\ ambient= <*>,5
+e13d082a,power/control problem,1
+f1dd0110,not- responding,1
+b02b9741,not responding,60
+fea08751,normal,206
+551adf73,link errors remain current,56
+05b8a108,inconsistent nodesets node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok>,0
+aaf4ba41,inconsistent nodesets node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok> node- <*> <*> <ok>,4
+68428543,inconsistent nodesets node- <*> 0x1fffffffe <ok> node- <*> 0xfffffffe <ok> node- <*> 0xfffffffe <ok> node- <*> 0xfffffffe <ok> node- <*> 0xfffffffe <ok>,0
+ffd891af,halt (command <*>,3
+7e85bcb6,critical,20
+8cfafe98,configured out,91
+b6d38bd5,clusterAddMember (command <*>,2
+3b38bec1,closing,1
+76727c51,bootGenvmunix (command <*>,2
+7a20a778,boot (command <*> Error: HALT asserted\ cannot continue,1
+8d336518,boot (command <*>,67
+61326117,blocked,15
+1c4bc323,ambient= <*>,292
+c76a5e84,active,5
+df7b42cd,Temperature <*> exceeds warning threshold,2
+859a3092,Targeting domains: node- <*> and nodes: node- <*> <*> child of command <*>,5
+c220de6e,Targeting domains: node- <*> and nodes: node- <*>,4
+1c9252dd,Targeting domains: node- D[0\ <*> and nodes: node- <*> <*>,0
+e6f4686e,Targeting domains: node- <*> and nodes: node- <*> <*> <*>,0
+a8108a6e,ServerFileSystem: ServerFileSystem domain <*> is full,12
+291f390d,ServerFileSystem: An ServerFileSystem domain panic has occurred on storage442,1
+5bb750e9,NIFF: node node- <*> has detected an available network connection on network <*> via interface scip0,2
+2681c120,NIFF: node node- <*> has detected an available network connection on network <*> via interface ee0,45
+17143b6b,NIFF: node node- <*> has detected an available network connection on network <*> via interface alt0,44
+402d4790,NIFF: node node- <*> detected a failed network connection on network <*> via interface alt0,2
+9050ee25,Linkerror event interval expired,394
+641961b9,Link ok,13
+db5aa7f9,Link in reset,9
+26c553bb,Link error on broadcast tree Interconnect- <*> <*> <*> <*>,4
+ec4e03ec,Link error,13
+3ea2d652,Fan speeds ( <*> <*> <*> <*> <*> <*> ),11
+76588bd2,Fan speeds ( <*> <*> <*> **** <*> <*> ),79
+bd82b62d,Failed subcommands <*>,1
+bf84569a,Component State Change: Component <*> is in the unavailable state (HWID= <*>,12
+b4e25afc,Command has completed successfully,10
+5452c51c,Command has been aborted,1
+97e2eb74,ClusterFileSystem: There is no server for ServerFileSystem domain <*>,32
+fb999096,ClusterFileSystem: ServerFileSystem domain <*> is no longer served by node node- <*>,36

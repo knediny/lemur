@@ -1,12 +1,21 @@
+# ----------------------------------------------------------------------------------
+# Code License Notice
+# ----------------------------------------------------------------------------------
+# - Author Contact: wei.zhang, zwpride@buaa.edu.cn
+#
+# - Inherits the basic data load algorithm and basic inference framework of LOGAPI.
+# - But more is original code.
+# ----------------------------------------------------------------------------------
 import regex as re
 import os
 import hashlib
 import pandas as pd
 from datetime import datetime
 from collections import defaultdict
-import random
 from functools import lru_cache
 from parser.vectorizer import Vectorizer
+import numpy as np
+import math
 
 class Parser:
     def __init__(
@@ -18,13 +27,11 @@ class Parser:
         log_format=None,
         dataset=None,
         keep_para=True,
-        n_candidate=2,
         k=2,
-        freq_threshold=2,
-        type_threshold=0.3,
-        digit_percent=0.3,
+        entropy_theshold=0,
         jaccard_similarity_threshold=0.7,
-        first_weight=10,
+        digit_percent=0.3,
+        debug=False,
     ):
         self.input_file = input_file
         self.output_file = output_file
@@ -34,19 +41,22 @@ class Parser:
         self.dataset = dataset
         self.logname = None
         self.logname_extension = None
-        self.n_candidate = n_candidate
         self.k = k
-        self.freq_threshold = freq_threshold
-        self.type_threshold = type_threshold
+        self.entropy_theshold = entropy_theshold
         self.jaccard_similarity_threshold = jaccard_similarity_threshold
-        self.first_weight = first_weight
         self.digit_percent = digit_percent
         self.keep_para = keep_para
         self.df_log = None
-        self.token_count_groups = defaultdict(lambda: [None, None, None])
+        self.token_count_buckets = defaultdict(lambda: [None, None, None])
         self.token_count_tidx_clusters = defaultdict(list)
         self.template_collection = set()
-
+        if debug:
+            print(self.dataset, 
+                "k: " ,self.k,
+                "entropy_theshold: ", self.entropy_theshold,
+                    "jaccard_similarity_threshold: ", self.jaccard_similarity_threshold,
+                    "digit_percent: ", self.digit_percent)
+        
     def parse(self, logname):
         start_time = datetime.now()
         print("Parsing file: " + os.path.join(self.input_file, logname))
@@ -54,8 +64,8 @@ class Parser:
         _, self.logname_extension = os.path.splitext(os.path.basename(self.logname))
         self.load_data()
         self.tokenize()
-        self.group_by_token_count()
-        self.split_group()
+        self.bucket_by_token_count()
+        self.split_bucket()
         self.cluster()
         self.retrieve()
         self.reconcile()
@@ -179,36 +189,24 @@ class Parser:
             lambda x: pd.Series(self.split_to_log_token(x))
         )
 
-    def group_by_token_count(self):
-        for idx, token_count in self.df_log["token_count"].iteritems():
-            if token_count not in self.token_count_groups:
-                self.token_count_groups[token_count][0] = [idx]
+    def bucket_by_token_count(self):
+        for idx, token_count in self.df_log["token_count"].items():
+            if token_count not in self.token_count_buckets:
+                self.token_count_buckets[token_count][0] = [idx]
             else:
-                self.token_count_groups[token_count][0].append(idx)
-
-    def compute_edit_distance_between_c_and_all_t(self, candidate_set, T):
-        cs_ts_distance = []
-        for c in candidate_set:
-            c_ts_distance = 0
-            for t in T:
-                c_ts_distance += self.compute_edit_distance_between_idx1_and_idx2(c, t)
-            cs_ts_distance.append(c_ts_distance)
-        return cs_ts_distance
+                self.token_count_buckets[token_count][0].append(idx)
 
     @lru_cache(maxsize=None)
-    def compute_edit_distance_between_idx1_and_idx2(self, idx1, idx2):
+    def compute_distance_between_idx1_and_idx2(self, idx1, idx2):
         log_token1 = self.df_log["log_token"].loc[idx1]
         log_token2 = self.df_log["log_token"].loc[idx2]
         last_len = max(len(log_token1), len(log_token2))
         log_token1 += [""] * (last_len - len(log_token1))
         log_token2 += [""] * (last_len - len(log_token2))
-        return (self.first_weight if log_token1[0] != log_token2[0] else 1) + sum(
-            self.compute_edit_distance_between_token(t1, t2)
-            for t1, t2 in zip(log_token1, log_token2)
-        )
+        return sum(self.compute_distance_between_token(t1, t2) for t1, t2 in zip(log_token1, log_token2))
 
     @lru_cache(maxsize=None)
-    def compute_edit_distance_between_token(self, token1, token2):
+    def compute_distance_between_token(self, token1, token2):
         # CHINESE_WEIGHT = 2
         # OTHER_WEIGHT = 1
         # @lru_cache(maxsize=None)
@@ -224,92 +222,93 @@ class Parser:
         s2 = set(self.df_log["log_token"].loc[idx2])
         return len(s1.intersection(s2)) / len(s1.union(s2))
 
-    def process_key(self, key):
-        def inspector_sample_log(group, k, n_candidate=64):
-            T = []
-            for _ in range(k):
-                candidate_set = random.sample(group, min(len(group), n_candidate))
-                if len(candidate_set) == 0:
-                    break
-                if len(T) == 0:
-                    selected = random.choice(candidate_set)
-                    T.append(selected)
-                    group.remove(selected)
-                    continue
-                all_c_all_t_distance = self.compute_edit_distance_between_c_and_all_t(
-                    candidate_set, T
-                )
-                best_candidate = max(
-                    range(len(all_c_all_t_distance)),
-                    key=all_c_all_t_distance.__getitem__,
-                )
-                selected = candidate_set[best_candidate]
-                T.append(selected)
-                group.remove(selected)
-            return T, group
+    def entropy(self, idx):
+        s = self.df_log["Content_"].loc[idx]
+        if isinstance(s, int):
+            s = str(s)
+        prob = [float(s.count(c)) / len(s) for c in dict.fromkeys(list(s))]
+        entropy = - sum([p * math.log(p) / math.log(2.0) for p in prob])
+        return entropy
 
-        def check(T):
-            len_T = len(T)
-            visit_T = [False] * len_T
-            details = []
-            for i in range(len_T):
-                if visit_T[i]:
+    def first_token(self, idx):
+        s = self.df_log["Content_"].loc[idx]
+        return s.split()[0] if s and " " in s else s
+
+    def process_key(self, key):
+        def entropy_sampling(bucket, k=10, n_layers=5):
+            entropy_and_token = [(item, self.entropy(item), self.first_token(item)) for item in bucket]
+            entropy_and_token.sort(key=lambda x: x[1], reverse=True)
+            layers = np.array_split(entropy_and_token, n_layers)
+            selected_samples = set()
+            tokens_selected = set()
+            for layer in layers:
+                for item in layer:
+                    if item[2] not in tokens_selected or len(tokens_selected) >= k:
+                        selected_samples.add(item[0])
+                        tokens_selected.add(item[2])
+                    if len(selected_samples) >= k:
+                        break
+                if len(selected_samples) >= k:
+                    break
+            return [int(idx) for idx in selected_samples]
+
+        def check(selected_samples):
+            len_selected_samples = len(selected_samples)
+            visit = [False] * len_selected_samples
+            merge = []
+            for i in range(len_selected_samples):
+                if visit[i]:
                     continue
-                visit_T[i] = True
-                for j in range(i + 1, len_T):
-                    if visit_T[j]:
+                visit[i] = True
+                for j in range(i + 1, len_selected_samples):
+                    if visit[j]:
                         continue
-                    visit_T[j] = True
+                    visit[j] = True
                     if (
-                        self.jaccard_similarity(T[i], T[j])
+                        self.jaccard_similarity(selected_samples[i], selected_samples[j])
                         > self.jaccard_similarity_threshold
                     ):
-                        details.append(T[j])
-            return details
+                        merge.append(selected_samples[j])
+            return [s for s in selected_samples if s not in merge]
 
-        def renew(T, group):
-            details = check(T)
-            T = [t for t in T if t not in details]
-            group.extend(details)
-            return T, group
-
-        value = self.token_count_groups[key]
-        group = value[0][:]
-        T, group = inspector_sample_log(group, self.k, self.n_candidate)
-        T, group = renew(T, group)
-        value[1] = T
-        value[2] = group
+        value = self.token_count_buckets[key]
+        bucket = value[0][:]
+        selected_samples = entropy_sampling(bucket, self.k)
+        selected_samples = check(selected_samples)
+        value[1] = selected_samples
+        value[2] = [item for item in bucket if item not in selected_samples]
         return value
 
-    def split_group(self):
-        for key in self.token_count_groups.keys():
-            self.token_count_groups[key] = self.process_key(key)
-        data_path = os.path.join(self.output_file, "detail/")
-        if not os.path.isdir(data_path):
-            os.makedirs(data_path)
-        for key in self.token_count_groups.keys():
-            value = self.token_count_groups[key]
-            key_data = [
-                (
-                    "center" if v in value[1] else "global",
-                    self.df_log["log_token"].loc[v],
-                )
-                for v in value[0]
-            ]
-            key_data = sorted(key_data, key=lambda x: x[1])
-            key_data_df = pd.DataFrame(key_data)
-            key_data_df.to_csv(data_path + f"{self.dataset}_{key}.csv", index=False)
+    def split_bucket(self):
+        for key in self.token_count_buckets.keys():
+            self.token_count_buckets[key] = self.process_key(key)
+        # check cluster center and other samples code
+        # data_path = os.path.join(self.output_file, "detail/")
+        # if not os.path.isdir(data_path):
+        #     os.makedirs(data_path)
+        # for key in self.token_count_buckets.keys():
+        #     value = self.token_count_buckets[key]
+        #     key_data = [
+        #         (
+        #             "center" if v in value[1] else "global",
+        #             self.df_log["log_token"].loc[v],
+        #         )
+        #         for v in value[0]
+        #     ]
+        #     key_data = sorted(key_data, key=lambda x: x[1])
+        #     key_data_df = pd.DataFrame(key_data)
+        #     key_data_df.to_csv(data_path + f"{self.dataset}_{key}.csv", index=False)
 
     def cluster(self):
-        for key in self.token_count_groups.keys():
-            value = self.token_count_groups[key]
+        for key in self.token_count_buckets.keys():
+            value = self.token_count_buckets[key]
             for tidx in value[1]:
                 self.token_count_tidx_clusters[(key, tidx)] = [tidx]
             for idx in value[2]:
                 min_distance = float("inf")
                 min_tidx = value[1][0]
                 for tidx in value[1]:
-                    distance = self.compute_edit_distance_between_idx1_and_idx2(
+                    distance = self.compute_distance_between_idx1_and_idx2(
                         idx, tidx
                     )
                     if distance < min_distance:
@@ -336,17 +335,24 @@ class Parser:
                     if di[0] in varas:
                         continue
                     p = di[1]
-                    stats = vectorizer.get_tokens_stats_at_position_all_docs(p)
-                    if len(stats) < min(self.type_threshold, len(data.keys()) + 1):
+                    e, stat = vectorizer.calculate_entropy_at_position(p)
+                    if e < self.entropy_theshold:
                         continue
                     else:
-                        observed = [stat[2] for stat in stats]
-                        range_val = max(observed) - min(observed)
-                        if range_val > self.freq_threshold:
-                            continue
-                        else:
-                            for stat in stats:
-                                varas.add(stat[0])
+                        for s in stat:
+                            varas.add(s[0])
+                    
+                    # stats = vectorizer.get_tokens_stats_at_position_all_docs(p)
+                    # if len(stats) < min(self.type_threshold, len(data.keys()) + 1):
+                    #     continue
+                    # else:
+                    #     observed = [stat[2] for stat in stats]
+                    #     range_val = max(observed) - min(observed)
+                    #     if range_val > self.freq_threshold:
+                    #         continue
+                    #     else:
+                    #         for stat in stats:
+                    #             varas.add(stat[0])
 
             # print(varas)
             def replace_token(log_token):
@@ -387,47 +393,43 @@ class Parser:
         )
         return parameter_list
 
+
     def dump(self):
-        if not os.path.isdir(self.output_file):
+        if not os.path.exists(self.output_file):
             os.makedirs(self.output_file)
+
         templateL = [0] * self.df_log.shape[0]
         idL = [0] * self.df_log.shape[0]
         df_events = []
+
         for template_token in self.template_collection:
             template_str = " ".join(template_token)
             template_id = hashlib.md5(template_str.encode("utf-8")).hexdigest()[0:8]
-            oc = 0
+
             for idx in range(len(idL)):
                 if self.df_log["log_token"].loc[idx] == template_token:
                     templateL[idx] = template_str
                     idL[idx] = template_id
-                    oc += 1
-            df_events.append([template_id, template_str, oc])
-        df_event = pd.DataFrame(
-            df_events, columns=["EventId", "EventTemplate", "Occurrences"]
-        )
+
+            df_events.append([template_id, template_str, templateL.count(template_str)])
 
         self.df_log["EventId"] = idL
         self.df_log["EventTemplate"] = templateL
-        self.df_log.drop("Content_", axis=1, inplace=True)
+        self.df_log.drop(["Content_", "log_token", "token_count"], axis=1, inplace=True)
+
         if self.keep_para:
-            self.df_log["ParameterList"] = self.df_log.apply(
-                self.get_parameter_list, axis=1
-            )
+            self.df_log["ParameterList"] = self.df_log.apply(self.get_parameter_list, axis=1)
+
         self.df_log.to_csv(
-            os.path.join(self.output_file, self.logname + "_structured.csv"),
-            index=False,
+            os.path.join(self.output_file, self.logname + "_structured.csv"), 
+            index=False
         )
 
-        occ_dict = dict(self.df_log["EventTemplate"].value_counts())
-        df_event = pd.DataFrame()
-        df_event["EventTemplate"] = self.df_log["EventTemplate"].unique()
-        df_event["EventId"] = df_event["EventTemplate"].map(
-            lambda x: hashlib.md5(x.encode("utf-8")).hexdigest()[0:8]
-        )
-        df_event["Occurrences"] = df_event["EventTemplate"].map(occ_dict)
+        df_events.sort(key=lambda x: x[1], reverse=True)
+        
+        df_event = pd.DataFrame(df_events, columns=["EventId", "EventTemplate", "Occurrences"])
         df_event.to_csv(
-            os.path.join(self.output_file, self.logname + "_templates.csv"),
-            index=False,
-            columns=["EventId", "EventTemplate", "Occurrences"],
+            os.path.join(self.output_file, self.logname + "_templates.csv"), 
+            index=False, 
+            columns=["EventId", "EventTemplate", "Occurrences"]
         )
