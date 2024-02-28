@@ -1,0 +1,27 @@
+EventId,EventTemplate,Occurrences
+cf4ef280,reverse mapping checking getaddrinfo for <*> <*> failed - POSSIBLE BREAK-IN ATTEMPT!,85
+ff8b9d05,pam_unix(sshd:session): session opened for user fztu by (uid= <*>,1
+cfe22f2e,pam_unix(sshd:session): session closed for user fztu,1
+0849a7d0,pam_unix(sshd:auth): check pass; user unknown,135
+63129522,pam_unix(sshd:auth): authentication failure; logname= uid= <*> euid= <*> tty= ssh ruser= rhost= <*> user= <*>,384
+d0a870e3,pam_unix(sshd:auth): authentication failure; logname= uid= <*> euid= <*> tty= ssh ruser= rhost= <*>,110
+b542638e,message repeated <*> times: [ Failed password for root from <*> port <*> ssh2],2
+965d77c9,input_userauth_request: invalid <*> <*> [preauth],113
+f32f0642,fatal: Write failed: Connection reset by peer [preauth],1
+ed5dfe56,error: Received disconnect from <*> <*> No more user authentication methods available. [preauth],45
+fe3ba645,error: Received disconnect from <*> <*> <*> Auth fail [preauth],2
+d66853f3,Received disconnect from <*> <*> disconnected by user,1
+bf0d3c59,Received disconnect from <*> <*> Closed due to user request. [preauth],7
+c1dcd989,Received disconnect from <*> <*> Bye Bye [preauth],413
+2f2318e5,PAM service(sshd) ignoring max retries; <*> > <*>,7
+e2678ac1,PAM <*> more authentication failures; logname= uid= <*> euid= <*> tty= ssh ruser= rhost= <*> user= root,2
+2d2b1fc1,PAM <*> more authentication failures; logname= uid= <*> euid= <*> tty= ssh ruser= rhost= <*>,6
+3e56daa5,PAM <*> more authentication failure; logname= uid= <*> euid= <*> tty= ssh ruser= rhost= <*>,2
+4ee49543,Invalid <*> <*> from <*>,113
+1aa673eb,Failed password for invalid <*> <*> from <*> port <*> ssh2,135
+f831cb6d,Failed password for <*> from <*> port <*> ssh2,383
+06ed67c8,Failed none for invalid <*> <*> from <*> port <*> ssh2,4
+509a487f,Disconnecting: Too many authentication failures for <*> [preauth],3
+c926c7d9,Did not receive identification string from <*>,10
+2491ca3e,Connection closed by <*> [preauth],34
+e879f754,Accepted password for fztu from <*> port <*> ssh2,1

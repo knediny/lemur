@@ -15,7 +15,6 @@ message = [
 def chat(message):
     client = OpenAI(
         api_key=OPENAI_API_KEY,
-        base_url="https://openai.zwpride.top/v1"
     )
 
     completion = client.chat.completions.create(

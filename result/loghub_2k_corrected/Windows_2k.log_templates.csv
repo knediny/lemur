@@ -1,0 +1,51 @@
+EventId,EventTemplate,Occurrences
+39b783c8,Warning: Unrecognized packageExtended attribute.,280
+5c8bd3df,Unloading offline registry hive: <*>,8
+70236f55,TrustedInstaller service starts successfully.,2
+0249909f,Startup processing thread terminated normally,2
+ddb70245,Starting the TrustedInstaller main loop.,2
+05f90e58,Starting TrustedInstaller initialization.,1
+0c5a20ae,Starting TrustedInstaller finalization.,1
+08fb5d73,Session: <*> initialized by client WindowsUpdateAgent.,608
+6b7a1fb2,Session: <*> initialized by client SPP.,1
+8599e10a,Scavenge: Starts,1
+ba2e4f32,"Scavenge: Completed, disposition: <*>",1
+1f1dbb91,Scavenge: Begin CSI Store,1
+fecb1294,SQM: Warning: Failed to upload all unsent reports. [ HRESULT = <*> E_FAIL],2
+7e5b1617,SQM: Requesting upload of all unsent reports.,2
+37ab6eff,"SQM: Queued <*> file(s) for upload with pattern: C: \Windows\servicing\sqm\*_all.sqm, flags: <*>",2
+492269e4,SQM: Initializing online with Windows opt-in: False,2
+68f5da13,"SQM: Failed to start upload with file pattern: C: \Windows\servicing\sqm\*_std.sqm, flags: <*> HRESULT = <*> E_FAIL]",2
+b46e9d13,SQM: Failed to start standard sample upload. [ HRESULT = <*> E_FAIL],2
+14f494a2,SQM: Cleaning up report files older than <*> days.,2
+7b1e578f,Reboot mark refs: <*>,1
+9e13d1d3,Reboot mark refs incremented to: <*>,1
+83d7d466,Read out cached package applicability for package: <*> ApplicableState: <*> CurrentState: <*>,558
+cd7130e6,Offline image is: read-only,1
+c7e0e082,"NonStart: Success, startup processing not required as expected.",2
+b756d24a,NonStart: Checking to ensure startup processing was not required.,2
+6342ae85,"No startup processing required, TrustedInstaller service was not set as autostart, or else a reboot is still pending.",2
+1850fbcc,Loading offline registry hive: <*> into registry key <*> from path <*>,8
+5b543f32,Loaded Servicing Stack <*> with Core: C: <*>,2
+ecc5604d,Idle processing thread terminated normally,1
+d70b26d5,Failed to internally open package. [ HRESULT = <*> CBS_E_INVALID_PACKAGE],18
+d231db52,Failed to get next element [ HRESULT = <*> CBS_E_MANIFEST_INVALID_ITEM],224
+c551ec22,Failed to create backup log cab. [ HRESULT = <*> ERROR_INVALID_FUNCTION],2
+2a5cb5b8,Expecting attribute name [ HRESULT = <*> CBS_E_MANIFEST_INVALID_ITEM],224
+1915371f,Ending the TrustedInstaller main loop.,1
+2d8b5399,Ending TrustedInstaller initialization.,2
+c5141d88,Ending TrustedInstaller finalization.,1
+a0ab2bd7,"Disabling manifest caching, because the image is not writeable.",1
+de8c16e7,"<*> Store coherency cookie matches last scavenge cookie, skipping scavenge.",1
+eaa74126,<*> Performing <*> operations; <*> are not lock/unlock and follow:,1
+df127f09,<*> ICSITransaction: : Commit calling IStorePendingTransaction: : Apply - coldpatching= FALSE applyflags= <*>,1
+989e6331,"<*> IAdvancedInstallerAwareStore_ResolvePendingTransactions (call <*> (flags = <*> progress = NULL, phase = <*> pdwDisposition = <*>",2
+cedd6548,"<*> Creating NT transaction (seq <*> objectname [ <*> ""(null)""",3
+0e643512,<*> Created NT transaction (seq <*> result <*> <*>,3
+0be01a02,<*> CSI Store <*> <*>,3
+976db025,<*> <*> <*> <*> WcpInitialize (wcp.dll version <*> called (stack <*>,6
+836c796f,<*> <*> <*> <*> PopulateComponentFamiliesKey - End,1
+0f42740e,<*> <*> <*> <*> PopulateComponentFamiliesKey - Begin,1
+7f920fc8,<*> <*> <*> <*> CSI perf trace:,3
+43a106f1,<*> <*> <*> <*> CSI Transaction <*> for deployment engine <*> with flags <*> and client id [ <*> <*> <*>,1
+642d0f4a,<*> <*> <*> <*> CSI Transaction <*>,1
