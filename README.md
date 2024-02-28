@@ -19,10 +19,6 @@ achieves the state-of-the-art performance and impressive efficiency.
 
 ![img](./assets/box_ga.svg)
 
-![img](./assets/execution_time.svg)
-
-![img](./assets/execution_time_for_various_dataset_size.svg)
-
 
 ## Running
 
