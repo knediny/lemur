@@ -6,7 +6,6 @@ from openai import OpenAI
 import os
 
 OPENAI_API_KEY =  os.environ.get('OPENAI_API_KEY')
-OPENAI_API_KEY = "sk-xxx"
 
 message = [
     {"role": "system", "content": "You are a helpful assistant."}
