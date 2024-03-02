@@ -39,7 +39,6 @@ The parsed logs (parsing results) are saved in the `result` folder.
 ### Get the results of Three-S-hop Chain-of-Thought Merging 
 
 ```
-cd cot
 export OPENAI_API_KEY="sk-xxx"
 python cot/cot_chat.py.py
 ```
