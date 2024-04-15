@@ -53,7 +53,7 @@ If you feel helpful, please cite our paper.
 ```bibtex
 @article{guo2024lemur,
   title={Lemur: Log Parsing with Entropy Sampling and Chain-of-Thought Merging},
-  author={Guo, Hongcheng and Zhang, Wei and Le, Anjie and Yang, Jian and Liu, Jiaheng and Li, Zhoujun and Zheng, Tieqiao and Xu, Shi and Zang, Runqiang and Zheng, Liangfan and others},
+  author={Zhang, Wei and Guo, Hongcheng and and Le, Anjie and Yang, Jian and Liu, Jiaheng and Li, Zhoujun and Zheng, Tieqiao and Xu, Shi and Zang, Runqiang and Zheng, Liangfan and others},
   journal={arXiv preprint arXiv:2402.18205},
   year={2024}
 }
